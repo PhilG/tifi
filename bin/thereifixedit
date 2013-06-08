@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require "tifi"
+
+r = Runner.parse(ARGV)
+r.start
