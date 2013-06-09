@@ -30,17 +30,9 @@ describe Runner do
         end
         
         it "returns correct modified options" do
-            argv = ["Changelog.md"]
+            argv = ["Changelog.md", "test/repo/"]
             runner = Runner.parse(argv)
-            runner.options.must_equal Hash[:io => "Changelog.md"]
+            runner.options.must_equal Hash[:io => "Changelog.md", :base => "test/repo/"]
         end
     end  
-    
-    it "returns merged options when asked about them" do
-        Runner.new(:io => "Changelog.md").options.must_equal Hash[:io => "Changelog.md"]
-    end
-    
-    it "outputs the whole changelog to stdout" do
-        proc { subject.start }.must_output "# Changelog #\n"
-    end
 end

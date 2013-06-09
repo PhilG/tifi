@@ -8,7 +8,7 @@ class Runner
     end
     
     def self.parse(argv = []) # Query method
-        argv == [] ? self.new : self.new({ :io => argv[0]}) 
+        argv == [] ? self.new : self.new({ :io => argv[0], :base => argv[1] })
     end
     
     def start # Command method! Not thourougly tested
